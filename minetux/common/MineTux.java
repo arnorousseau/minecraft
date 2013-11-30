@@ -2,14 +2,18 @@ package minetux.common;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockHopper;
+import net.minecraft.client.Minecraft;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.item.EnumArmorMaterial;
+import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemSeeds;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.ItemSword;
 import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.common.EnumHelper;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraft.world.biome.BiomeGenBase;
 import minetux.proxy.MineTuxCommonProxy;
 import minetux.proxy.MineTuxServerProxy;
@@ -42,16 +46,18 @@ public class MineTux {
 	public static Block BlockCopper, BlockSilver, BlockRuby, BlockMithril;
 	public static Block BlockHop;
 	
-	//Armor - Furnace - Ingot
+	//Armor - Furnace - Ingot - Weapon
 	public static Item CopperHelmet, CopperChestPlate, CopperLeggings, CopperBoots;
 	public static Item SilverHelmet, SilverChestPlate, SilverLeggings, SilverBoots;
-	public static Item MithrilHelmet, MithrilChestPlate, MithrilLeggings, MithrilBoots;
+	public static Item MithrilHelmet, MithrilChestPlate, MithrilLeggings, MithrilBoots;	
 	
 	public static Item CookedEgg, OstrichEgg;
 	
 	public static Item IngotCopper, IngotSilver, IngotMithril;
 	public static Item GemRuby;
 	public static Item WandEther;
+	
+	public static Item WarAxe;
 	
 	
 	public static final BiomeGenBase EtherBiome = new BiomeGenEther(25);
@@ -60,6 +66,7 @@ public class MineTux {
 	static EnumArmorMaterial CopperArmor = EnumHelper.addArmorMaterial("CopperArmor", 20, new int[]{1, 4, 3, 1}, 15);
 	static EnumArmorMaterial SilverArmor = EnumHelper.addArmorMaterial("SilverArmor", 20, new int[]{2, 8, 5, 2}, 15);
 	static EnumArmorMaterial MithrilArmor = EnumHelper.addArmorMaterial("MithrilArmor", 20, new int[]{3, 8, 6, 3}, 15);
+	static EnumToolMaterial WarAxeMaterial = EnumHelper.addToolMaterial("WarAxe", 2, 250, 7F, 2, 5);
 	
 	//Seeds
 	public static Item HopSeed, HopItem, BeerItem;
@@ -99,6 +106,10 @@ public class MineTux {
 		WandEther = new ItemWandEther(12019).setUnlocalizedName("WandEther").setTextureName("minetux:WandEther");
 		BeerItem = new ItemBeer(12020, 2, 2, false).setUnlocalizedName("Beer").setTextureName("minetux:Beer");
 		OstrichEgg = new ItemOstrichEgg(12021).setUnlocalizedName("OstrichEgg").setCreativeTab(CreativeTabs.tabMaterials).setTextureName("minetux:OstrichEgg");
+		WarAxe = new ItemSword(12022,WarAxeMaterial).setUnlocalizedName("WarAxe").setTextureName("minetux:WarAxe");
+		
+		
+		MinecraftForge.setToolClass(WarAxe, "sword", 2);
 		
 		GameRegistry.registerItem(CopperHelmet, "CopperHelmet", "MineTux");
 		GameRegistry.registerItem(CopperChestPlate, "CopperChestPlate", "MineTux");
@@ -121,6 +132,7 @@ public class MineTux {
 		GameRegistry.registerItem(WandEther, "WandEther", "MineTux");
 		GameRegistry.registerItem(BeerItem, "BeerItem", "MineTux");
 		GameRegistry.registerItem(OstrichEgg, "OstrichEgg", "MineTux");
+		GameRegistry.registerItem(WarAxe,"WarAxe","MineTux");
 		
 		GameRegistry.registerBlock(BlockCopper, "BlockCopper");
 		GameRegistry.registerBlock(BlockSilver, "BlockSilver");
@@ -204,6 +216,9 @@ public class MineTux {
 		
 		GameRegistry.addRecipe(new ItemStack(WandEther,1), new Object[]{" R "," B "," R ",Character.valueOf('R'), GemRuby, Character.valueOf('B'), Item.blazeRod});
 		GameRegistry.addRecipe(new ItemStack(BeerItem,1), new Object[]{"OOO"," R ","   ",Character.valueOf('O'), MineTux.HopItem, Character.valueOf('R'), Item.glassBottle});
+		
+		GameRegistry.addRecipe(new ItemStack(WarAxe,1), new Object[]{"III","ISI"," S ",Character.valueOf('I'), Item.ingotIron, Character.valueOf('S'), Item.stick});
+		
 		
         GameRegistry.registerWorldGenerator(new WorldGeneratorMineTux());
         
