@@ -35,8 +35,7 @@ public class MineTux {
 	
 	@Instance("MineTux")
 	public static MineTux instance;
-	
-	//Commentaire Nono
+		
 	public static final int ether_id = 8;
 	
 	//Blocks
