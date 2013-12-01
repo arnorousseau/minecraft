@@ -233,7 +233,6 @@ public class MineTux {
 		GameRegistry.addRecipe(new ItemStack(WandEther,1), new Object[]{" R "," B "," R ",Character.valueOf('R'), GemRuby, Character.valueOf('B'), Item.blazeRod});
 		GameRegistry.addRecipe(new ItemStack(BeerItem,1), new Object[]{"OOO"," R ","   ",Character.valueOf('O'), MineTux.HopItem, Character.valueOf('R'), Item.glassBottle});
 		GameRegistry.addRecipe(new ItemStack(WarAxe,1), new Object[]{"III","ISI"," S ",Character.valueOf('I'), Item.ingotIron, Character.valueOf('S'), Item.stick});
-		//GameRegistry.addRecipe(new ItemStack(BlockFluidRuby,1), new Object[]{"WWW","WRW"," WWW",Character.valueOf('W'), Item.bucketWater, Character.valueOf('R'), MineTux.GemRuby});
 		
         GameRegistry.registerWorldGenerator(new WorldGeneratorMineTux());
         

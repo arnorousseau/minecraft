@@ -10,6 +10,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.gen.feature.WorldGenFlowers;
+import net.minecraft.world.gen.feature.WorldGenLakes;
 import net.minecraft.world.gen.feature.WorldGenLiquids;
 import net.minecraftforge.event.terraingen.TerrainGen;
 
@@ -27,7 +28,7 @@ public class BiomeGenEther extends BiomeGenBase {
         this.setBiomeName("Ether");
 
         this.theBiomeDecorator.bigMushroomsPerChunk = 1;
-        this.theBiomeDecorator.generateLakes = true;        
+        this.theBiomeDecorator.generateLakes = false;        
 	}
 
 	
@@ -37,7 +38,7 @@ public class BiomeGenEther extends BiomeGenBase {
         WorldGenFlowers sunflowerGenerator = new WorldGenFlowers(MineTux.BlockSunFlower.blockID);
         
         boolean doGen = TerrainGen.decorate(par1World, par2Random, par3, par4, FLOWERS);
-        for (int j = 0; doGen && j < 5; ++j)
+        for (int j = 0; doGen && j < 3; ++j)
         {
             int k = par3 + par2Random.nextInt(16) + 8;
             int l = par2Random.nextInt(128);
@@ -46,7 +47,16 @@ public class BiomeGenEther extends BiomeGenBase {
         }
         
         
-
+        doGen = TerrainGen.decorate(par1World, par2Random, par3, par4, LAKE);
+        WorldGenRubyLakes lakes = new WorldGenRubyLakes();
+        for (int j = 0; doGen && j < 2; ++j)
+        {
+        	int k = par3 + par2Random.nextInt(16) + 8;
+            int l = par2Random.nextInt(128);
+            int i1 = par4 + par2Random.nextInt(16) + 8;
+        	lakes.generate(par1World, par2Random, k, l, i1);
+        }
+        
 
     }
 	
