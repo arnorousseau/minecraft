@@ -2,6 +2,9 @@ package minetux.common;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockHopper;
+import net.minecraft.block.material.MapColor;
+import net.minecraft.block.material.Material;
+import net.minecraft.block.material.MaterialLiquid;
 import net.minecraft.client.Minecraft;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EnumCreatureType;
@@ -14,6 +17,8 @@ import net.minecraft.item.ItemSword;
 import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.common.EnumHelper;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.fluids.Fluid;
+import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraft.world.biome.BiomeGenBase;
 import minetux.proxy.MineTuxCommonProxy;
 import minetux.proxy.MineTuxServerProxy;
@@ -41,24 +46,26 @@ public class MineTux {
 	public static MineTux instance;
 		
 	public static final int ether_id = 8;
+	public static final int fluidruby_id = 2700; 
 	
 	//Blocks
 	public static Block BlockCopper, BlockSilver, BlockRuby, BlockMithril;
 	public static Block BlockHop, BlockSunFlower;
+	public static Block BlockFluidRuby;
 	
 	//Armor - Furnace - Ingot - Weapon
 	public static Item CopperHelmet, CopperChestPlate, CopperLeggings, CopperBoots;
 	public static Item SilverHelmet, SilverChestPlate, SilverLeggings, SilverBoots;
 	public static Item MithrilHelmet, MithrilChestPlate, MithrilLeggings, MithrilBoots;	
-	
 	public static Item CookedEgg, OstrichEgg;
-	
 	public static Item IngotCopper, IngotSilver, IngotMithril;
 	public static Item GemRuby;
 	public static Item WandEther;
-	
 	public static Item WarAxe;
 	
+	public static Fluid fluidRuby;
+	
+	public static Material materialFluidRuby;
 	
 	public static final BiomeGenBase EtherBiome = new BiomeGenEther(25);
 	
@@ -76,14 +83,20 @@ public class MineTux {
 	@EventHandler
 	public void PreInit(FMLPreInitializationEvent event){
 
+		fluidRuby = new Fluid("Ruby").setBlockID(fluidruby_id);
+		FluidRegistry.registerFluid(fluidRuby);
+		
+		materialFluidRuby = new MaterialLiquid(MapColor.grassColor);
+		
 		//Block Registry
 		BlockCopper = new BlockCopper(2600).setHardness(1.0F).setResistance(5.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("BlockCopper").setTextureName("minetux:BlockCopper");
 		BlockSilver = new BlockSilver(2601).setHardness(1.0F).setResistance(5.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("BlockSilver").setTextureName("minetux:BlockSilver");	
 		BlockHop = new BlockHop(2602).setUnlocalizedName("BlockHop").setTextureName("minetux:BlockHop");
 		BlockRuby = new BlockRuby(2603).setHardness(1.0F).setResistance(5.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("BlockRuby").setTextureName("minetux:BlockRuby");	
 		BlockMithril = new BlockMithril(2604).setHardness(1.0F).setResistance(5.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("BlockMithril").setTextureName("minetux:BlockMithril");	
-		
 		BlockSunFlower = new BlockSunFlower(2605).setUnlocalizedName("BlockSunFlower").setTextureName("minetux:BlockSunFlower");
+
+		BlockFluidRuby = new BlockFluidRuby(fluidruby_id).setUnlocalizedName("BlockFluidRuby").setTextureName("minetux:BlockFluidRuby");
 		
 		//Items Registry
 		CopperHelmet = new ItemCopperArmor(12000, CopperArmor, 0,0).setUnlocalizedName("CopperHelmet").setTextureName("minetux:HelmetCopper");
@@ -135,13 +148,13 @@ public class MineTux {
 		GameRegistry.registerItem(BeerItem, "BeerItem", "MineTux");
 		GameRegistry.registerItem(OstrichEgg, "OstrichEgg", "MineTux");
 		GameRegistry.registerItem(WarAxe,"WarAxe","MineTux");
-		
 		GameRegistry.registerBlock(BlockCopper, "BlockCopper");
 		GameRegistry.registerBlock(BlockSilver, "BlockSilver");
 		GameRegistry.registerBlock(BlockRuby, "BlockRuby");
 		GameRegistry.registerBlock(BlockMithril, "BlockMithril");
 		GameRegistry.registerBlock(BlockHop, "BlockHop");
 		GameRegistry.registerBlock(BlockSunFlower, "BlockSunFlower");
+		GameRegistry.registerBlock(BlockFluidRuby, "BlockFluidRuby");
 		
 		//Furnace Registry
 		GameRegistry.addSmelting(Item.egg.itemID, new ItemStack(CookedEgg, 1), 0.5f);
@@ -149,13 +162,14 @@ public class MineTux {
 		GameRegistry.addSmelting(BlockSilver.blockID, new ItemStack(IngotSilver, 1), 0.5f);	
 		GameRegistry.addSmelting(BlockMithril.blockID, new ItemStack(IngotMithril, 1), 0.5f);	
 		
+		
 		//Seeds Registry
 		GameRegistry.registerItem(HopSeed, "HopSeed", "MineTux");
 	}
 	
 	@EventHandler
 	public void Init(FMLInitializationEvent event){
-		
+				
 		EntityRegistry.registerGlobalEntityID(EntityHerobrine.class, "Herobrine", EntityRegistry.findGlobalUniqueEntityId(), 24, 30);
 		EntityRegistry.registerModEntity(EntityHerobrine.class, "EntityHerobrine", 250, this, 100, 1, true);
 		EntityRegistry.addSpawn(EntityHerobrine.class, 5, 4, 4, EnumCreatureType.monster, new BiomeGenBase[] {
@@ -216,12 +230,10 @@ public class MineTux {
 		GameRegistry.addRecipe(new ItemStack(MithrilChestPlate,1), new Object[]{"I I","III","III",Character.valueOf('I'), IngotMithril});
 		GameRegistry.addRecipe(new ItemStack(MithrilLeggings,1), new Object[]{"III","I I","I I",Character.valueOf('I'), IngotMithril});
 		GameRegistry.addRecipe(new ItemStack(MithrilBoots,1), new Object[]{"   ","I I","I I",Character.valueOf('I'), IngotMithril});
-		
 		GameRegistry.addRecipe(new ItemStack(WandEther,1), new Object[]{" R "," B "," R ",Character.valueOf('R'), GemRuby, Character.valueOf('B'), Item.blazeRod});
 		GameRegistry.addRecipe(new ItemStack(BeerItem,1), new Object[]{"OOO"," R ","   ",Character.valueOf('O'), MineTux.HopItem, Character.valueOf('R'), Item.glassBottle});
-		
 		GameRegistry.addRecipe(new ItemStack(WarAxe,1), new Object[]{"III","ISI"," S ",Character.valueOf('I'), Item.ingotIron, Character.valueOf('S'), Item.stick});
-		
+		//GameRegistry.addRecipe(new ItemStack(BlockFluidRuby,1), new Object[]{"WWW","WRW"," WWW",Character.valueOf('W'), Item.bucketWater, Character.valueOf('R'), MineTux.GemRuby});
 		
         GameRegistry.registerWorldGenerator(new WorldGeneratorMineTux());
         

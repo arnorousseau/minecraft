@@ -1,6 +1,7 @@
 package minetux.common;
 
 import static net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.FLOWERS;
+import static net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.LAKE;
 
 import java.util.Random;
 
@@ -9,6 +10,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.gen.feature.WorldGenFlowers;
+import net.minecraft.world.gen.feature.WorldGenLiquids;
 import net.minecraftforge.event.terraingen.TerrainGen;
 
 public class BiomeGenEther extends BiomeGenBase {
@@ -42,8 +44,10 @@ public class BiomeGenEther extends BiomeGenBase {
             int i1 = par4 + par2Random.nextInt(16) + 8;
             sunflowerGenerator.generate(par1World, par2Random, k, l, i1);
         }
-
         
+        
+
+
     }
 	
 	
