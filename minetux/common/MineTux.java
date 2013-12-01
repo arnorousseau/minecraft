@@ -44,7 +44,7 @@ public class MineTux {
 	
 	//Blocks
 	public static Block BlockCopper, BlockSilver, BlockRuby, BlockMithril;
-	public static Block BlockHop;
+	public static Block BlockHop, BlockSunFlower;
 	
 	//Armor - Furnace - Ingot - Weapon
 	public static Item CopperHelmet, CopperChestPlate, CopperLeggings, CopperBoots;
@@ -82,6 +82,8 @@ public class MineTux {
 		BlockHop = new BlockHop(2602).setUnlocalizedName("BlockHop").setTextureName("minetux:BlockHop");
 		BlockRuby = new BlockRuby(2603).setHardness(1.0F).setResistance(5.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("BlockRuby").setTextureName("minetux:BlockRuby");	
 		BlockMithril = new BlockMithril(2604).setHardness(1.0F).setResistance(5.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("BlockMithril").setTextureName("minetux:BlockMithril");	
+		
+		BlockSunFlower = new BlockSunFlower(2605).setUnlocalizedName("BlockSunFlower").setTextureName("minetux:BlockSunFlower");
 		
 		//Items Registry
 		CopperHelmet = new ItemCopperArmor(12000, CopperArmor, 0,0).setUnlocalizedName("CopperHelmet").setTextureName("minetux:HelmetCopper");
@@ -139,6 +141,7 @@ public class MineTux {
 		GameRegistry.registerBlock(BlockRuby, "BlockRuby");
 		GameRegistry.registerBlock(BlockMithril, "BlockMithril");
 		GameRegistry.registerBlock(BlockHop, "BlockHop");
+		GameRegistry.registerBlock(BlockSunFlower, "BlockSunFlower");
 		
 		//Furnace Registry
 		GameRegistry.addSmelting(Item.egg.itemID, new ItemStack(CookedEgg, 1), 0.5f);
