@@ -7,11 +7,14 @@ import java.util.Random;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.tileentity.TileEntityMobSpawner;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
+import net.minecraft.world.gen.feature.WorldGenDungeons;
 import net.minecraft.world.gen.feature.WorldGenFlowers;
 import net.minecraft.world.gen.feature.WorldGenLakes;
 import net.minecraft.world.gen.feature.WorldGenLiquids;
+import net.minecraftforge.common.DungeonHooks;
 import net.minecraftforge.event.terraingen.TerrainGen;
 
 public class BiomeGenEther extends BiomeGenBase {
@@ -47,15 +50,21 @@ public class BiomeGenEther extends BiomeGenBase {
         }
         
         
-        doGen = TerrainGen.decorate(par1World, par2Random, par3, par4, LAKE);
-        WorldGenRubyLakes lakes = new WorldGenRubyLakes();
-        for (int j = 0; doGen && j < 2; ++j)
-        {
-        	int k = par3 + par2Random.nextInt(16) + 8;
-            int l = par2Random.nextInt(128);
-            int i1 = par4 + par2Random.nextInt(16) + 8;
-        	lakes.generate(par1World, par2Random, k, l, i1);
+        //add slide spawner
+        int k = par3 + par2Random.nextInt(16) + 8;
+        int l = par2Random.nextInt(128);
+        int i1 = par4 + par2Random.nextInt(16) + 8;
+        
+        Material material = par1World.getBlockMaterial(k, l, i1-1);
+        if(material.isSolid()){
+        	par1World.setBlock(k, l, i1, Block.mobSpawner.blockID, 0, 2);
+        	TileEntityMobSpawner tileentitymobspawner = (TileEntityMobSpawner)par1World.getBlockTileEntity(k, l, i1);
+
+            if (tileentitymobspawner != null) {
+            	tileentitymobspawner.getSpawnerLogic().setMobID("MazeSlime");	
+            }
         }
+        
         
 
     }

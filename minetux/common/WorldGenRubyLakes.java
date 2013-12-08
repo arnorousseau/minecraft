@@ -8,15 +8,16 @@ import net.minecraft.block.material.Material;
 import net.minecraft.world.EnumSkyBlock;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
+import net.minecraft.world.gen.feature.WorldGenLakes;
 import net.minecraft.world.gen.feature.WorldGenerator;
 
-public class WorldGenRubyLakes extends WorldGenerator
+public class WorldGenRubyLakes extends WorldGenLakes
 {
     private int blockIndex;
 
     public WorldGenRubyLakes()
     {
-    	
+    	super(MineTux.BlockFluidRuby.blockID);
     }
 
     public boolean generate(World par1World, Random par2Random, int par3, int par4, int par5)

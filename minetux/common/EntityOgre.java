@@ -17,6 +17,7 @@ public class EntityOgre extends EntityMob  {
 	}
 	
 	
+	
 	protected String getLivingSound()
     {
         return "mob.zombiepig.zpig";

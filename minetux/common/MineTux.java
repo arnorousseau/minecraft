@@ -2,6 +2,7 @@ package minetux.common;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockHopper;
+import net.minecraft.block.BlockStationary;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialLiquid;
@@ -78,7 +79,7 @@ public class MineTux {
 	//Seeds
 	public static Item HopSeed, HopItem, BeerItem;
 	
-	
+
 	
 	@EventHandler
 	public void PreInit(FMLPreInitializationEvent event){
@@ -86,7 +87,7 @@ public class MineTux {
 		fluidRuby = new Fluid("Ruby").setBlockID(fluidruby_id);
 		FluidRegistry.registerFluid(fluidRuby);
 		
-		materialFluidRuby = new MaterialLiquid(MapColor.grassColor);
+		materialFluidRuby = new MaterialLiquid(MapColor.tntColor);
 		
 		//Block Registry
 		BlockCopper = new BlockCopper(2600).setHardness(1.0F).setResistance(5.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("BlockCopper").setTextureName("minetux:BlockCopper");
