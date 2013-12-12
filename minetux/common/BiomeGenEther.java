@@ -49,24 +49,6 @@ public class BiomeGenEther extends BiomeGenBase {
             sunflowerGenerator.generate(par1World, par2Random, k, l, i1);
         }
         
-        
-        //add slide spawner
-        int k = par3 + par2Random.nextInt(16) + 8;
-        int l = par2Random.nextInt(128);
-        int i1 = par4 + par2Random.nextInt(16) + 8;
-        
-        Material material = par1World.getBlockMaterial(k, l, i1-1);
-        if(material.isSolid()){
-        	par1World.setBlock(k, l, i1, Block.mobSpawner.blockID, 0, 2);
-        	TileEntityMobSpawner tileentitymobspawner = (TileEntityMobSpawner)par1World.getBlockTileEntity(k, l, i1);
-
-            if (tileentitymobspawner != null) {
-            	tileentitymobspawner.getSpawnerLogic().setMobID("MazeSlime");	
-            }
-        }
-        
-        
-
     }
 	
 	

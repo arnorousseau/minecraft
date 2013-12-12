@@ -9,7 +9,7 @@ public class WorldProviderEther extends WorldProvider  {
 
 	public void registerWorldChunkManager()
     {
-            this.worldChunkMgr = new WorldChunkManagerHell(MineTux.EtherBiome, MineTux.ether_id, MineTux.ether_id);
+			this.worldChunkMgr = new WorldChunkManagerEther(worldObj.getSeed(), terrainType);
             this.dimensionId = MineTux.ether_id;
     }
 	

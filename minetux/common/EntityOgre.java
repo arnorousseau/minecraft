@@ -25,7 +25,8 @@ public class EntityOgre extends EntityMob  {
 	
 	
 	public boolean getCanSpawnHere(){
-		return true;
+		int percentage = this.rand.nextInt(100);
+        return (percentage < 5);
 	}
 	
 	
