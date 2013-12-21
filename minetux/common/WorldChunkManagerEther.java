@@ -26,7 +26,7 @@ public class WorldChunkManagerEther extends WorldChunkManager
 	{
 		this.myBiomeCache = new BiomeCache(this);
 		this.myBiomesToSpawnIn = new ArrayList<BiomeGenBase>();
-		this.myBiomesToSpawnIn.add(MineTux.EtherBiome);
+		this.myBiomesToSpawnIn.add(MineTux.BiomeEther);
 	}
 
 	public WorldChunkManagerEther(long seed, WorldType worldtype)
@@ -54,7 +54,7 @@ public class WorldChunkManagerEther extends WorldChunkManager
 		BiomeGenBase biome = this.myBiomeCache.getBiomeGenAt(x, z);
 		if (biome == null)
 		{
-			return MineTux.EtherBiome;
+			return MineTux.BiomeEther;
 		}
 	
 		return biome;
@@ -133,7 +133,7 @@ public class WorldChunkManagerEther extends WorldChunkManager
 			if (aint[i] >= 0) {
 				par1ArrayOfBiomeGenBase[i] = BiomeGenBase.biomeList[aint[i]];
 			} else {
-				par1ArrayOfBiomeGenBase[i] = MineTux.EtherBiome;
+				par1ArrayOfBiomeGenBase[i] = MineTux.BiomeEther;
 			}
 		}
 	
@@ -164,7 +164,7 @@ public class WorldChunkManagerEther extends WorldChunkManager
 				if (aint[i] >= 0) {
 					par1ArrayOfBiomeGenBase[i] = BiomeGenBase.biomeList[aint[i]];
 				} else {
-					par1ArrayOfBiomeGenBase[i] = MineTux.EtherBiome;
+					par1ArrayOfBiomeGenBase[i] = MineTux.BiomeEther;
 				}
 			}
 
@@ -224,6 +224,6 @@ public class WorldChunkManagerEther extends WorldChunkManager
 	
 	public void cleanupCache()
 	{
-	this.myBiomeCache.cleanupCache();
+		this.myBiomeCache.cleanupCache();
 	}
 }

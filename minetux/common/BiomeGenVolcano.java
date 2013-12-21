@@ -74,5 +74,6 @@ public class BiomeGenVolcano extends BiomeGenBase
 	            	tileentitymobspawner.getSpawnerLogic().setMobID("MazeSlime");	
 	            }
 	        }
+	        
 	    }
 }

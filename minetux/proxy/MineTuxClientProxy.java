@@ -8,6 +8,7 @@ import minetux.common.EntityOgre;
 import minetux.common.EntityOstrich;
 import minetux.common.EntityPopo;
 import minetux.common.EntitySeaUrchin;
+import minetux.common.EntityYeti;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelBiped;
 import net.minecraft.client.model.ModelSlime;
@@ -28,6 +29,7 @@ public class MineTuxClientProxy extends MineTuxCommonProxy {
 		RenderingRegistry.registerEntityRenderingHandler(EntitySeaUrchin.class, new RenderSeaUrchin(new ModelSeaUrchin(), 0.5f));
 		RenderingRegistry.registerEntityRenderingHandler(EntityCephalos.class, new RenderCephalos(new ModelCephalos(), 0.4F,0.4F));
         RenderingRegistry.registerEntityRenderingHandler(EntityPopo.class, new RenderPopo(new ModelPopo(), 3.0F, 2.0F));
+        RenderingRegistry.registerEntityRenderingHandler(EntityYeti.class, new RenderYeti(new ModelYeti(), 0.5F));
 
 	}
 	

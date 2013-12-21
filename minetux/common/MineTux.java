@@ -19,6 +19,7 @@ import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.common.EnumHelper;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraft.world.biome.BiomeGenBase;
+import net.minecraft.world.biome.BiomeGenSwamp;
 import minetux.proxy.MineTuxCommonProxy;
 import minetux.proxy.MineTuxServerProxy;
 import cpw.mods.fml.common.Mod;
@@ -47,15 +48,18 @@ public class MineTux {
 	public static final int ether_id = 8;
 	
 	//Blocks
-	public static Block BlockCopper, BlockSilver, BlockRuby, BlockMithril;
-	public static Block BlockHop, BlockSunFlower;
-	public static Block BlockVolcano = new BlockVolcano(202).setUnlocalizedName("BlockVolcano").setTextureName("minetux:BlockVolcano");
+	public static Block BlockCopper = new BlockCopper(2600).setHardness(1.0F).setResistance(5.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("BlockCopper").setTextureName("minetux:BlockCopper");
+	public static Block BlockSilver = new BlockSilver(2601).setHardness(2.0F).setResistance(5.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("BlockSilver").setTextureName("minetux:BlockSilver");	
+	public static Block BlockHop = new BlockHop(2602).setUnlocalizedName("BlockHop").setTextureName("minetux:BlockHop");
+	public static Block BlockRuby = new BlockRuby(2603).setHardness(1.5F).setResistance(5.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("BlockRuby").setTextureName("minetux:BlockRuby");	
+	public static Block BlockMithril = new BlockMithril(2604).setHardness(2.0F).setResistance(5.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("BlockMithril").setTextureName("minetux:BlockMithril");	
+	public static Block BlockSunFlower = new BlockSunFlower(2605).setUnlocalizedName("BlockSunFlower").setTextureName("minetux:BlockSunFlower");
+	public static Block BlockVolcano = new BlockVolcano(202).setHardness(1.5F).setUnlocalizedName("BlockVolcano").setTextureName("minetux:BlockVolcano");
 	public static Block BlockPeachGrass = new BlockPeachGrass(203).setHardness(0.0F).setUnlocalizedName("BlockPeachGrass");
-	public static Block BlockDiscStone = new BlockDiscStone(204,"Disc Stone").setUnlocalizedName("BlockDiscStone").setTextureName("minetux:BlockDiscStone");
+	public static Block BlockDiscStone = new BlockDiscStone(204,"Disc Stone").setHardness(1.0F).setUnlocalizedName("BlockDiscStone").setTextureName("minetux:BlockDiscStone");
 	public static Block BlockDiscDirt = new BlockDiscDirt(205).setUnlocalizedName("BlockDiscDirt").setTextureName("minetux:BlockDiscDirt");
 
 	
-	//Armor - Furnace - Ingot - Weapon
 	public static Item CopperHelmet, CopperChestPlate, CopperLeggings, CopperBoots;
 	public static Item SilverHelmet, SilverChestPlate, SilverLeggings, SilverBoots;
 	public static Item MithrilHelmet, MithrilChestPlate, MithrilLeggings, MithrilBoots;	
@@ -65,9 +69,11 @@ public class MineTux {
 	public static Item WandEther;
 	public static Item WarAxe;
 	
-	public static final BiomeGenBase EtherBiome = new BiomeGenEther(25);
-	public static final BiomeGenBase VolcanoBiome = new BiomeGenVolcano(26);
-	public static final BiomeGenBase HighlandsBiome = new BiomeGenHighlandsBiome(27);
+	public static final BiomeGenBase BiomeEther = new BiomeGenEther(25);
+	public static final BiomeGenBase BiomeVolcano = new BiomeGenVolcano(26);
+	public static final BiomeGenBase BiomeHighlands = new BiomeGenHighlandsBiome(27);
+	public static final BiomeGenBase BiomeGlacier = new BiomeGenGlacier(28);
+	public static final BiomeGenBase BiomeSwamp = new BiomeGenWaterSwamp(29);
 	
 	//Material
 	static EnumArmorMaterial CopperArmor = EnumHelper.addArmorMaterial("CopperArmor", 20, new int[]{1, 4, 3, 1}, 15);
@@ -83,15 +89,6 @@ public class MineTux {
 	@EventHandler
 	public void PreInit(FMLPreInitializationEvent event){
 
-		//Block Registry
-		BlockCopper = new BlockCopper(2600).setHardness(1.0F).setResistance(5.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("BlockCopper").setTextureName("minetux:BlockCopper");
-		BlockSilver = new BlockSilver(2601).setHardness(1.0F).setResistance(5.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("BlockSilver").setTextureName("minetux:BlockSilver");	
-		BlockHop = new BlockHop(2602).setUnlocalizedName("BlockHop").setTextureName("minetux:BlockHop");
-		BlockRuby = new BlockRuby(2603).setHardness(1.0F).setResistance(5.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("BlockRuby").setTextureName("minetux:BlockRuby");	
-		BlockMithril = new BlockMithril(2604).setHardness(1.0F).setResistance(5.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("BlockMithril").setTextureName("minetux:BlockMithril");	
-		BlockSunFlower = new BlockSunFlower(2605).setUnlocalizedName("BlockSunFlower").setTextureName("minetux:BlockSunFlower");
-		
-		//Items Registry
 		CopperHelmet = new ItemCopperArmor(12000, CopperArmor, 0,0).setUnlocalizedName("CopperHelmet").setTextureName("minetux:HelmetCopper");
 		CopperChestPlate = new ItemCopperArmor(12001, CopperArmor, 0, 1).setUnlocalizedName("CopperChestPlate").setTextureName("minetux:ChestPlateCopper");
 		CopperLeggings = new ItemCopperArmor(12002, CopperArmor, 0, 2).setUnlocalizedName("CopperLeggings").setTextureName("minetux:LeggingsCopper");
@@ -161,20 +158,21 @@ public class MineTux {
 		GameRegistry.registerItem(HopSeed, "HopSeed", "MineTux");
 	}
 	
+	
 	@EventHandler
 	public void Init(FMLInitializationEvent event){
 				
 		EntityRegistry.registerGlobalEntityID(EntityHerobrine.class, "Herobrine", EntityRegistry.findGlobalUniqueEntityId(), 24, 30);
 		EntityRegistry.registerModEntity(EntityHerobrine.class, "EntityHerobrine", 250, this, 100, 1, true);
 		EntityRegistry.addSpawn(EntityHerobrine.class, 5, 4, 4, EnumCreatureType.monster, new BiomeGenBase[] {
-			MineTux.EtherBiome
+			MineTux.BiomeEther
 		});
 		LanguageRegistry.instance().addStringLocalization("entity.Herobrine.name", "Herobrine");
 		
 		EntityRegistry.registerGlobalEntityID(EntityOgre.class, "Ogre", EntityRegistry.findGlobalUniqueEntityId(), 24, 30);
 		EntityRegistry.registerModEntity(EntityOgre.class, "EntityOgre", 251, this, 100, 1, true);
 		EntityRegistry.addSpawn(EntityOgre.class, 10, 4, 4, EnumCreatureType.monster, new BiomeGenBase[] {
-			MineTux.HighlandsBiome
+			MineTux.BiomeHighlands
 		});
 		LanguageRegistry.instance().addStringLocalization("entity.Ogre.name", "Ogre");
 		
@@ -182,7 +180,7 @@ public class MineTux {
 		EntityRegistry.registerGlobalEntityID(EntityMazeSlime.class, "MazeSlime", EntityRegistry.findGlobalUniqueEntityId(), 24, 30);
 		EntityRegistry.registerModEntity(EntityMazeSlime.class, "EntityMazeSlime", 252, this, 100, 1, true);
 		EntityRegistry.addSpawn(EntityMazeSlime.class, 1, 1, 4, EnumCreatureType.monster, new BiomeGenBase[] {
-			MineTux.EtherBiome
+			MineTux.BiomeEther
 		});
 		LanguageRegistry.instance().addStringLocalization("entity.MazeSlime.name", "MazeSlime");
 		
@@ -191,7 +189,7 @@ public class MineTux {
 		EntityRegistry.registerGlobalEntityID(EntityOstrich.class, "Ostrich", EntityRegistry.findGlobalUniqueEntityId(), 24, 30);
 		EntityRegistry.registerModEntity(EntityOstrich.class, "EntityOstrich", 253, this, 100, 1, true);
 		EntityRegistry.addSpawn(EntityOstrich.class, 1, 1, 1, EnumCreatureType.creature, new BiomeGenBase[] {
-			MineTux.EtherBiome
+			MineTux.BiomeEther
 		});
 		LanguageRegistry.instance().addStringLocalization("entity.Ostrich.name", "Ostrich");
 		
@@ -207,7 +205,7 @@ public class MineTux {
 		EntityRegistry.registerGlobalEntityID(EntityCephalos.class, "Cephalos", EntityRegistry.findGlobalUniqueEntityId(), 24, 30);
 		EntityRegistry.registerModEntity(EntityCephalos.class, "EntityCephalos", 255, this, 100, 1, true);
 		EntityRegistry.addSpawn(EntityCephalos.class, 1, 1, 1, EnumCreatureType.monster, new BiomeGenBase[] {
-			MineTux.VolcanoBiome
+			MineTux.BiomeVolcano
 		});
 		LanguageRegistry.instance().addStringLocalization("entity.Cephalos.name", "Cephalos");
 		
@@ -215,16 +213,24 @@ public class MineTux {
 		EntityRegistry.registerGlobalEntityID(EntityPopo.class, "Popo", EntityRegistry.findGlobalUniqueEntityId(), 24, 30);
 		EntityRegistry.registerModEntity(EntityPopo.class, "EntityPopo", 256, this, 100, 1, true);
 		EntityRegistry.addSpawn(EntityPopo.class, 1, 1, 1, EnumCreatureType.monster, new BiomeGenBase[] {
-			MineTux.EtherBiome
+			MineTux.BiomeEther
 		});
 		LanguageRegistry.instance().addStringLocalization("entity.Popo.name", "Popo");
 		
+
+		EntityRegistry.registerGlobalEntityID(EntityYeti.class, "Yeti", EntityRegistry.findGlobalUniqueEntityId(), 24, 30);
+		EntityRegistry.registerModEntity(EntityYeti.class, "EntityMazeSlime", 258, this, 100, 1, true);
+		EntityRegistry.addSpawn(EntityYeti.class, 1, 1, 4, EnumCreatureType.monster, new BiomeGenBase[] {
+			MineTux.BiomeGlacier
+		});
+		LanguageRegistry.instance().addStringLocalization("entity.Yeti.name", "Yeti");
 		
-	
+		
 		
 		DimensionManager.registerProviderType(MineTux.ether_id, WorldProviderEther.class, true);
         DimensionManager.registerDimension(MineTux.ether_id, MineTux.ether_id);
 		
+        
 		//Recipe Registry
 		GameRegistry.addRecipe(new ItemStack(CopperHelmet,1), new Object[]{"III","I I",Character.valueOf('I'), IngotCopper});
 		GameRegistry.addRecipe(new ItemStack(CopperChestPlate,1), new Object[]{"I I","III","III",Character.valueOf('I'), IngotCopper});

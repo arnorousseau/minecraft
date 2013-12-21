@@ -6,7 +6,8 @@ import net.minecraft.world.gen.layer.IntCache;
 
 public class GenLayerBiomesEther extends GenLayer {
 
-	protected BiomeGenBase[] allowedBiomes = {MineTux.EtherBiome, MineTux.VolcanoBiome, MineTux.HighlandsBiome};
+	protected BiomeGenBase[] allowedBiomes = {MineTux.BiomeEther, MineTux.BiomeVolcano, MineTux.BiomeHighlands, MineTux.BiomeGlacier};
+	
 	
 	public GenLayerBiomesEther(long seed, GenLayer genlayer) {
 		super(seed);
