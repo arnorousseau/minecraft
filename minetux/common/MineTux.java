@@ -59,6 +59,9 @@ public class MineTux {
 	public static Block BlockDiscStone = new BlockDiscStone(204,"Disc Stone").setHardness(1.0F).setUnlocalizedName("BlockDiscStone").setTextureName("minetux:BlockDiscStone");
 	public static Block BlockDiscDirt = new BlockDiscDirt(205).setUnlocalizedName("BlockDiscDirt").setTextureName("minetux:BlockDiscDirt");
 
+	public static BlockEtherPortal BlockPortal = (BlockEtherPortal)new BlockEtherPortal(206).setHardness(-1.0F).setLightValue(0.75F).setUnlocalizedName("BlockEtherPortal");
+	public static BlockEtherPortalTrigger BlockPortalTrigger = (BlockEtherPortalTrigger)new BlockEtherPortalTrigger(207).setHardness(0.0F).setLightValue(1.00F).setUnlocalizedName("BlockEtherPortalTrigger");
+	
 	
 	public static Item CopperHelmet, CopperChestPlate, CopperLeggings, CopperBoots;
 	public static Item SilverHelmet, SilverChestPlate, SilverLeggings, SilverBoots;
@@ -146,6 +149,10 @@ public class MineTux {
 		GameRegistry.registerBlock(BlockSunFlower, "BlockSunFlower");
 		GameRegistry.registerBlock(BlockVolcano, "BlockVolcano");
 		GameRegistry.registerBlock(BlockPeachGrass, "BlockPeachGrass");
+		GameRegistry.registerBlock(BlockPortal, "BlockPortal");
+		GameRegistry.registerBlock(BlockPortalTrigger, "BlockPortalTrigger");
+		
+		
 		
 		//Furnace Registry
 		GameRegistry.addSmelting(Item.egg.itemID, new ItemStack(CookedEgg, 1), 0.5f);
