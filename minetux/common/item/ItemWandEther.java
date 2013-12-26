@@ -1,7 +1,10 @@
-package minetux.common;
+package minetux.common.item;
 
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.relauncher.Side;
+import minetux.common.EtherTeleporter;
+import minetux.common.MineTux;
+import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
@@ -18,8 +21,9 @@ public class ItemWandEther extends Item {
 	}
 
 	
-	public ItemStack onItemRightClick(ItemStack var1, World var2, EntityPlayer var3)
+	/*public ItemStack onItemRightClick(ItemStack var1, World var2, EntityPlayer var3)
 	{
+		
 		Side side = FMLCommonHandler.instance().getEffectiveSide();
 		if (side == Side.SERVER)
 		{
@@ -37,5 +41,15 @@ public class ItemWandEther extends Item {
 			}
 		}
 		return var1;
-	}
+	}*/
+	
+	
+	public boolean onItemUse(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, World par3World, int par4, int par5, int par6, int par7, float par8, float par9, float par10)
+    {
+       if(par3World.getBlockId(par4, par5, par6) == Block.blockIron.blockID){
+    	   par3World.setBlock(par4, par5+1, par6, MineTux.BlockPortalTrigger.blockID);
+       }
+
+       return true;
+    }
 }

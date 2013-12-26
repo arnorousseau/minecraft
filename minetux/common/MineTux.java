@@ -20,6 +20,7 @@ import net.minecraftforge.common.EnumHelper;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.biome.BiomeGenSwamp;
+import minetux.common.item.ItemWandEther;
 import minetux.proxy.MineTuxCommonProxy;
 import minetux.proxy.MineTuxServerProxy;
 import cpw.mods.fml.common.Mod;
@@ -47,6 +48,13 @@ public class MineTux {
 		
 	public static final int ether_id = 8;
 	
+	static EnumArmorMaterial CopperArmor = EnumHelper.addArmorMaterial("CopperArmor", 20, new int[]{1, 4, 3, 1}, 15);
+	static EnumArmorMaterial SilverArmor = EnumHelper.addArmorMaterial("SilverArmor", 20, new int[]{2, 8, 5, 2}, 15);
+	static EnumArmorMaterial MithrilArmor = EnumHelper.addArmorMaterial("MithrilArmor", 20, new int[]{3, 8, 6, 3}, 15);
+	static EnumToolMaterial WarAxeMaterial = EnumHelper.addToolMaterial("WarAxe", 2, 250, 7F, 2, 5);
+	static EnumToolMaterial WarHammerMaterial = EnumHelper.addToolMaterial("Hamma", 3, 750, 1.0F, 14, 9);
+	
+	
 	//Blocks
 	public static Block BlockCopper = new BlockCopper(2600).setHardness(1.0F).setResistance(5.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("BlockCopper").setTextureName("minetux:BlockCopper");
 	public static Block BlockSilver = new BlockSilver(2601).setHardness(2.0F).setResistance(5.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("BlockSilver").setTextureName("minetux:BlockSilver");	
@@ -71,6 +79,7 @@ public class MineTux {
 	public static Item GemRuby;
 	public static Item WandEther;
 	public static Item WarAxe;
+	public static Item WarHammer = new ItemWarHammer(12023, WarHammerMaterial).setCreativeTab(CreativeTabs.tabCombat).setFull3D().setUnlocalizedName("WarHammer");
 	
 	public static final BiomeGenBase BiomeEther = new BiomeGenEther(25);
 	public static final BiomeGenBase BiomeVolcano = new BiomeGenVolcano(26);
@@ -78,11 +87,6 @@ public class MineTux {
 	public static final BiomeGenBase BiomeGlacier = new BiomeGenGlacier(28);
 	public static final BiomeGenBase BiomeSwamp = new BiomeGenWaterSwamp(29);
 	
-	//Material
-	static EnumArmorMaterial CopperArmor = EnumHelper.addArmorMaterial("CopperArmor", 20, new int[]{1, 4, 3, 1}, 15);
-	static EnumArmorMaterial SilverArmor = EnumHelper.addArmorMaterial("SilverArmor", 20, new int[]{2, 8, 5, 2}, 15);
-	static EnumArmorMaterial MithrilArmor = EnumHelper.addArmorMaterial("MithrilArmor", 20, new int[]{3, 8, 6, 3}, 15);
-	static EnumToolMaterial WarAxeMaterial = EnumHelper.addToolMaterial("WarAxe", 2, 250, 7F, 2, 5);
 	
 	//Seeds
 	public static Item HopSeed, HopItem, BeerItem;

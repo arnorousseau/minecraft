@@ -374,7 +374,7 @@ import cpw.mods.fml.relauncher.SideOnly;
         /** Register Icons/Textures **/
         public void registerIcons(IconRegister par1IconRegister)
         {
-          this.iconArray = new Icon[] {par1IconRegister.registerIcon("minetux" + ":" + "MHFfire"+"_0"), par1IconRegister.registerIcon("minetux" + ":" + "MHFfire"+"_1")};
+          this.iconArray = new Icon[] {par1IconRegister.registerIcon("minetux" + ":" + "fire"+"_0"), par1IconRegister.registerIcon("minetux" + ":" + "fire"+"_1")};
         }
         @SideOnly(Side.CLIENT)
         public Icon getFireIcon(int par1) {

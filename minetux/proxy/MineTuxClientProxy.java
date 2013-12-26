@@ -9,9 +9,11 @@ import minetux.common.EntityOstrich;
 import minetux.common.EntityPopo;
 import minetux.common.EntitySeaUrchin;
 import minetux.common.EntityYeti;
+import minetux.common.MineTux;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelBiped;
 import net.minecraft.client.model.ModelSlime;
+import net.minecraftforge.client.IItemRenderer;
 import net.minecraftforge.client.MinecraftForgeClient;
 
 public class MineTuxClientProxy extends MineTuxCommonProxy {
@@ -30,6 +32,8 @@ public class MineTuxClientProxy extends MineTuxCommonProxy {
 		RenderingRegistry.registerEntityRenderingHandler(EntityCephalos.class, new RenderCephalos(new ModelCephalos(), 0.4F,0.4F));
         RenderingRegistry.registerEntityRenderingHandler(EntityPopo.class, new RenderPopo(new ModelPopo(), 3.0F, 2.0F));
         RenderingRegistry.registerEntityRenderingHandler(EntityYeti.class, new RenderYeti(new ModelYeti(), 0.5F));
+
+        MinecraftForgeClient.registerItemRenderer(MineTux.WarHammer.itemID, (IItemRenderer)new RenderWarHammer());
 
 	}
 	
