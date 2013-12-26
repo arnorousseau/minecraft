@@ -61,7 +61,7 @@ public class EntityCephalos extends EntityMob
     
     protected int getDropItemId()
     {
-        return MineTux.GemRuby.itemID;
+        return MineTux.CephalosGriffe.itemID;
     }
 
     

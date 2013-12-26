@@ -80,6 +80,7 @@ public class MineTux {
 	public static Item WandEther;
 	public static Item WarAxe;
 	public static Item WarHammer = new ItemWarHammer(12023, WarHammerMaterial).setCreativeTab(CreativeTabs.tabCombat).setFull3D().setUnlocalizedName("WarHammer");
+	public static Item CephalosGriffe;
 	
 	public static final BiomeGenBase BiomeEther = new BiomeGenEther(25);
 	public static final BiomeGenBase BiomeVolcano = new BiomeGenVolcano(26);
@@ -119,7 +120,7 @@ public class MineTux {
 		BeerItem = new ItemBeer(12020, 2, 2, false).setUnlocalizedName("Beer").setTextureName("minetux:Beer");
 		OstrichEgg = new ItemOstrichEgg(12021).setUnlocalizedName("OstrichEgg").setCreativeTab(CreativeTabs.tabMaterials).setTextureName("minetux:OstrichEgg");
 		WarAxe = new ItemSword(12022,WarAxeMaterial).setUnlocalizedName("WarAxe").setTextureName("minetux:WarAxe");
-		
+		CephalosGriffe = new Item(12024).setUnlocalizedName("CephalosGriffe").setCreativeTab(CreativeTabs.tabMaterials).setTextureName("minetux:CephalosGriffe");
 		
 		MinecraftForge.setToolClass(WarAxe, "sword", 2);
 		
@@ -155,7 +156,7 @@ public class MineTux {
 		GameRegistry.registerBlock(BlockPeachGrass, "BlockPeachGrass");
 		GameRegistry.registerBlock(BlockPortal, "BlockPortal");
 		GameRegistry.registerBlock(BlockPortalTrigger, "BlockPortalTrigger");
-		
+		GameRegistry.registerItem(CephalosGriffe, "CephalosGriffe", "MineTux");
 		
 		
 		//Furnace Registry

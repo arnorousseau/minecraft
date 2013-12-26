@@ -37,8 +37,8 @@ public class EntityOgre extends EntityMob  {
 	    this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(0.5D);
 	    this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setAttribute(5.0D);
 	}
-
 	
+		
 	protected void dropRareDrop(int par1)
     {
         this.dropItem(MineTux.GemRuby.itemID, 1);
