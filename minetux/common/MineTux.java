@@ -67,7 +67,8 @@ public class MineTux {
 	public static Block BlockPeachGrass = new BlockPeachGrass(203).setHardness(0.0F).setUnlocalizedName("BlockPeachGrass");
 	public static Block BlockDiscStone = new BlockDiscStone(204,"Disc Stone").setHardness(1.0F).setUnlocalizedName("BlockDiscStone").setTextureName("minetux:BlockDiscStone");
 	public static Block BlockDiscDirt = new BlockDiscDirt(205).setUnlocalizedName("BlockDiscDirt").setTextureName("minetux:BlockDiscDirt");
-	public static Block BlockBrickStone = new BlockBrickStone(208).setHardness(1.0F).setResistance(5.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("BlockBrickStone").setTextureName("minetux:BlockBrickStone");
+	public static Block BlockStoneHigh = new BlockStoneHigh(208).setHardness(2.0F).setResistance(10.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("BlockStoneHigh").setTextureName("minetux:BlockStoneHigh");
+	public static Block BlockBrickHigh = new BlockBrickHigh(209).setHardness(2.0F).setResistance(10.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("BlockBrickHigh").setTextureName("minetux:BlockBrickHigh");
 	
 	public static BlockEtherPortal BlockPortal = (BlockEtherPortal)new BlockEtherPortal(206).setHardness(-1.0F).setLightValue(0.75F).setUnlocalizedName("BlockEtherPortal");
 	public static BlockEtherPortalTrigger BlockPortalTrigger = (BlockEtherPortalTrigger)new BlockEtherPortalTrigger(207).setHardness(0.0F).setLightValue(1.00F).setUnlocalizedName("BlockEtherPortalTrigger");
@@ -159,7 +160,8 @@ public class MineTux {
 		GameRegistry.registerBlock(BlockPortal, "BlockPortal");
 		GameRegistry.registerBlock(BlockPortalTrigger, "BlockPortalTrigger");
 		GameRegistry.registerBlock(BlockDiscStone, "BlockDiscStone");
-		GameRegistry.registerBlock(BlockBrickStone, "BlockBrickStone");
+		GameRegistry.registerBlock(BlockStoneHigh, "BlockStoneHigh");
+		GameRegistry.registerBlock(BlockBrickHigh, "BlockBrickHigh");
 		GameRegistry.registerItem(CephalosGriffe, "CephalosGriffe", "MineTux");
 		
 		
@@ -168,7 +170,7 @@ public class MineTux {
 		GameRegistry.addSmelting(BlockCopper.blockID, new ItemStack(IngotCopper, 1), 0.5f);		
 		GameRegistry.addSmelting(BlockSilver.blockID, new ItemStack(IngotSilver, 1), 0.5f);	
 		GameRegistry.addSmelting(BlockMithril.blockID, new ItemStack(IngotMithril, 1), 0.5f);	
-		GameRegistry.addSmelting(BlockDiscStone.blockID, new ItemStack(BlockBrickStone, 1), 0.5f);	
+		GameRegistry.addSmelting(BlockDiscStone.blockID, new ItemStack(BlockStoneHigh, 1), 0.5f);	
 		
 		//Seeds Registry
 		GameRegistry.registerItem(HopSeed, "HopSeed", "MineTux");
@@ -277,6 +279,9 @@ public class MineTux {
 		GameRegistry.addRecipe(new ItemStack(WandEther,1), new Object[]{" R "," B "," R ",Character.valueOf('R'), GemRuby, Character.valueOf('B'), Item.blazeRod});
 		GameRegistry.addRecipe(new ItemStack(BeerItem,1), new Object[]{"OOO"," R ","   ",Character.valueOf('O'), MineTux.HopItem, Character.valueOf('R'), Item.glassBottle});
 		GameRegistry.addRecipe(new ItemStack(WarAxe,1), new Object[]{"III","ISI"," S ",Character.valueOf('I'), Item.ingotIron, Character.valueOf('S'), Item.stick});
+		
+		GameRegistry.addRecipe(new ItemStack(BlockBrickHigh,4), new Object[]{"   ","PP ","PP ",Character.valueOf('P'), MineTux.BlockStoneHigh});
+		
 		
         GameRegistry.registerWorldGenerator(new WorldGeneratorMineTux());
         

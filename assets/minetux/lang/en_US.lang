@@ -38,4 +38,5 @@ entity.Yeti.name=Yeti
 tile.BlockSunFlower.name=Tournesol
 item.CephalosGriffe.name=Griffe de Cephalos
 tile.BlockDiscStone.name=Terre de l'Highland
-tile.BlockBrickStone.name=Pierre de l'Highland
+tile.BlockStoneHigh.name=Pierre de l'Highland
+tile.BlockBrickHigh.name=Brique de l'Highland
