@@ -68,7 +68,7 @@ public class EntityCephalos extends EntityMob
     protected void applyEntityAttributes()
     {
         super.applyEntityAttributes();
-        this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setAttribute(75.0D);
+        this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setAttribute(40.0D);
         this.getEntityAttribute(SharedMonsterAttributes.followRange).setAttribute(35.0D);
         this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(0.855D);
     }

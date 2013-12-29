@@ -177,7 +177,7 @@ public class MineTux {
 		EntityRegistry.registerGlobalEntityID(EntityHerobrine.class, "Herobrine", EntityRegistry.findGlobalUniqueEntityId(), 24, 30);
 		EntityRegistry.registerModEntity(EntityHerobrine.class, "EntityHerobrine", 250, this, 100, 1, true);
 		EntityRegistry.addSpawn(EntityHerobrine.class, 5, 4, 4, EnumCreatureType.monster, new BiomeGenBase[] {
-			MineTux.BiomeEther
+			MineTux.BiomeEther, MineTux.BiomeHighlands
 		});
 		LanguageRegistry.instance().addStringLocalization("entity.Herobrine.name", "Herobrine");
 		
@@ -192,7 +192,7 @@ public class MineTux {
 		EntityRegistry.registerGlobalEntityID(EntityMazeSlime.class, "MazeSlime", EntityRegistry.findGlobalUniqueEntityId(), 24, 30);
 		EntityRegistry.registerModEntity(EntityMazeSlime.class, "EntityMazeSlime", 252, this, 100, 1, true);
 		EntityRegistry.addSpawn(EntityMazeSlime.class, 1, 1, 4, EnumCreatureType.monster, new BiomeGenBase[] {
-			MineTux.BiomeEther
+			MineTux.BiomeGlacier
 		});
 		LanguageRegistry.instance().addStringLocalization("entity.MazeSlime.name", "MazeSlime");
 		
@@ -236,6 +236,14 @@ public class MineTux {
 			MineTux.BiomeGlacier
 		});
 		LanguageRegistry.instance().addStringLocalization("entity.Yeti.name", "Yeti");
+		
+		
+		EntityRegistry.registerGlobalEntityID(EntityErupe.class, "Erupe", EntityRegistry.findGlobalUniqueEntityId(), 24, 30);
+		EntityRegistry.registerModEntity(EntityErupe.class, "EntityErupe", 259, this, 100, 1, true);
+		EntityRegistry.addSpawn(EntityErupe.class, 1, 1, 4, EnumCreatureType.creature, new BiomeGenBase[] {
+			MineTux.BiomeHighlands
+		});
+		LanguageRegistry.instance().addStringLocalization("entity.Erupe.name", "Erupe");
 		
 		
 		

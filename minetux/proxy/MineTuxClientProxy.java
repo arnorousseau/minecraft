@@ -2,6 +2,7 @@ package minetux.proxy;
 
 import cpw.mods.fml.client.registry.RenderingRegistry;
 import minetux.common.EntityCephalos;
+import minetux.common.EntityErupe;
 import minetux.common.EntityHerobrine;
 import minetux.common.EntityMazeSlime;
 import minetux.common.EntityOgre;
@@ -32,6 +33,7 @@ public class MineTuxClientProxy extends MineTuxCommonProxy {
 		RenderingRegistry.registerEntityRenderingHandler(EntityCephalos.class, new RenderCephalos(new ModelCephalos(), 0.4F,0.4F));
         RenderingRegistry.registerEntityRenderingHandler(EntityPopo.class, new RenderPopo(new ModelPopo(), 3.0F, 2.0F));
         RenderingRegistry.registerEntityRenderingHandler(EntityYeti.class, new RenderYeti(new ModelYeti(), 0.5F));
+        RenderingRegistry.registerEntityRenderingHandler(EntityErupe.class, new RenderErupe(new ModelErupe(), 0.5F,  0.5F));
 
         MinecraftForgeClient.registerItemRenderer(MineTux.WarHammer.itemID, (IItemRenderer)new RenderWarHammer());
 
