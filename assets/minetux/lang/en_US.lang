@@ -37,3 +37,5 @@ entity.Popo.name=Popo
 entity.Yeti.name=Yeti
 tile.BlockSunFlower.name=Tournesol
 item.CephalosGriffe.name=Griffe de Cephalos
+tile.BlockDiscStone.name=Terre de l'Highland
+tile.BlockBrickStone.name=Pierre de l'Highland
