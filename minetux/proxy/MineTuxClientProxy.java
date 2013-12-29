@@ -11,6 +11,7 @@ import minetux.common.EntityPopo;
 import minetux.common.EntitySeaUrchin;
 import minetux.common.EntityYeti;
 import minetux.common.MineTux;
+import minetux.common.entities.EntityZombieKing;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelBiped;
 import net.minecraft.client.model.ModelSlime;
@@ -25,6 +26,7 @@ public class MineTuxClientProxy extends MineTuxCommonProxy {
 		super.registerRender();
 		 
 		//render
+		RenderingRegistry.registerEntityRenderingHandler(EntityZombieKing.class, new RenderZombieKing(new ModelBiped(), 0.5f));
 		RenderingRegistry.registerEntityRenderingHandler(EntityHerobrine.class, new RenderHerobrine(new ModelBiped(), 0.5f));
 		RenderingRegistry.registerEntityRenderingHandler(EntityOgre.class, new RenderOgre(new ModelBiped(), 0.5f));
 		RenderingRegistry.registerEntityRenderingHandler(EntityMazeSlime.class, new RenderMazeSlime(new ModelSlime(16), new ModelSlime(0), 0.5f));

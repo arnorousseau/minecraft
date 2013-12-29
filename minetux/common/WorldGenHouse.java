@@ -37,10 +37,8 @@ public class WorldGenHouse extends WorldGenerator
                         }
                         
                         if (blockID == x){
-                        	System.out.println("ici TRUE");
                                 return true;
                         }else if (blockID == Block.grass.blockID && blockIDBelow == x){
-                        	System.out.println("ici TRUE");
                                 return true;
                         }
                 }
@@ -1184,7 +1182,7 @@ public class WorldGenHouse extends WorldGenerator
                 world.setBlock(i + 14, j + 4, k + 2, Block.torchWood.blockID, 3, 1);
                 world.setBlock(i + 14, j + 4, k + 9, Block.torchWood.blockID, 4, 1);
 
-                if(world.isRemote){
+                if(!world.isRemote){
                 	EntityVillager villager = new EntityVillager(world);
                 	villager.setLocationAndAngles(i+10 + 2, j, k+3 + 2, 360.0F, 0.0F);
                 	villager.setProfession(2);

@@ -20,6 +20,7 @@ import net.minecraftforge.common.EnumHelper;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.biome.BiomeGenSwamp;
+import minetux.common.entities.EntityZombieKing;
 import minetux.common.item.ItemWandEther;
 import minetux.proxy.MineTuxCommonProxy;
 import minetux.proxy.MineTuxServerProxy;
@@ -245,6 +246,11 @@ public class MineTux {
 		});
 		LanguageRegistry.instance().addStringLocalization("entity.Erupe.name", "Erupe");
 		
+		
+		EntityRegistry.registerGlobalEntityID(EntityZombieKing.class, "ZombieKing", EntityRegistry.findGlobalUniqueEntityId(), 24, 30);
+		EntityRegistry.registerModEntity(EntityZombieKing.class, "ZombieKing", 260, this, 100, 1, true);
+		//EntityRegistry.addSpawn(EntityZombieKing.class, 1, 1, 1, EnumCreatureType.monster, new BiomeGenBase[] {});
+		LanguageRegistry.instance().addStringLocalization("entity.ZombieKing.name", "ZombieKing");
 		
 		
 		DimensionManager.registerProviderType(MineTux.ether_id, WorldProviderEther.class, true);
