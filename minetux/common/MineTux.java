@@ -231,7 +231,7 @@ public class MineTux {
 		
 
 		EntityRegistry.registerGlobalEntityID(EntityYeti.class, "Yeti", EntityRegistry.findGlobalUniqueEntityId(), 24, 30);
-		EntityRegistry.registerModEntity(EntityYeti.class, "EntityMazeSlime", 258, this, 100, 1, true);
+		EntityRegistry.registerModEntity(EntityYeti.class, "Yeti", 258, this, 100, 1, true);
 		EntityRegistry.addSpawn(EntityYeti.class, 1, 1, 4, EnumCreatureType.monster, new BiomeGenBase[] {
 			MineTux.BiomeGlacier
 		});
