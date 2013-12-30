@@ -55,50 +55,49 @@ public class WorldGenTower extends WorldGenerator
                         return false;
                 }
 
-                for(int y=j; y<(j+40); y++){
-           	 	 	 world.setBlock(i+1,y,k+3, Block.netherBrick.blockID);
-            	 	 world.setBlock(i,y,k+3, Block.netherBrick.blockID);
-             	 	 world.setBlock(i-1,y,k+3, Block.netherBrick.blockID);
-              	 	 world.setBlock(i-2,y,k+2, Block.netherBrick.blockID);
-               	 	 world.setBlock(i-3,y,k+1, Block.netherBrick.blockID);
-                	 world.setBlock(i-3,y,k, Block.netherBrick.blockID);
-                	 world.setBlock(i-3,y,k-1, Block.netherBrick.blockID);
-                	 world.setBlock(i-2,y,k-2, Block.netherBrick.blockID);
-                	 world.setBlock(i-1,y,k-3, Block.netherBrick.blockID);
+                for(int y=j; y<(j+25); y++){
+           	 	 	 world.setBlock(i+1,y,k+3, MineTux.BlockBrickHigh.blockID);
+            	 	 world.setBlock(i,y,k+3, MineTux.BlockBrickHigh.blockID);
+             	 	 world.setBlock(i-1,y,k+3, MineTux.BlockBrickHigh.blockID);
+              	 	 world.setBlock(i-2,y,k+2, MineTux.BlockBrickHigh.blockID);
+               	 	 world.setBlock(i-3,y,k+1, MineTux.BlockBrickHigh.blockID);
+                	 world.setBlock(i-3,y,k, MineTux.BlockBrickHigh.blockID);
+                	 world.setBlock(i-3,y,k-1, MineTux.BlockBrickHigh.blockID);
+                	 world.setBlock(i-2,y,k-2, MineTux.BlockBrickHigh.blockID);
+                	 world.setBlock(i-1,y,k-3, MineTux.BlockBrickHigh.blockID);
                 	 
                 	 if(y>(j+2)){
-                		 world.setBlock(i,y,k-3, Block.netherBrick.blockID);
+                		 world.setBlock(i,y,k-3, MineTux.BlockBrickHigh.blockID);
                 	 }
                 	                 	 
-                	 world.setBlock(i+1,y,k-3, Block.netherBrick.blockID);
-                	 world.setBlock(i+2,y,k-2, Block.netherBrick.blockID);
-                	 world.setBlock(i+3,y,k-1, Block.netherBrick.blockID);
-                	 world.setBlock(i+3,y,k, Block.netherBrick.blockID);
-                	 world.setBlock(i+3,y,k+1, Block.netherBrick.blockID);
-                	 world.setBlock(i+2,y,k+2, Block.netherBrick.blockID);
-                	 
+                	 world.setBlock(i+1,y,k-3, MineTux.BlockBrickHigh.blockID);
+                	 world.setBlock(i+2,y,k-2, MineTux.BlockBrickHigh.blockID);
+                	 world.setBlock(i+3,y,k-1, MineTux.BlockBrickHigh.blockID);
+                	 world.setBlock(i+3,y,k, MineTux.BlockBrickHigh.blockID);
+                	 world.setBlock(i+3,y,k+1, MineTux.BlockBrickHigh.blockID);
+                	 world.setBlock(i+2,y,k+2, MineTux.BlockBrickHigh.blockID);
                 	 
                 	 if(y == (j+10) || y == (j+20)){
-                		 world.setBlock(i-2,y,k, Block.netherBrick.blockID);
-                		 world.setBlock(i-1,y,k, Block.netherBrick.blockID);
-                		 world.setBlock(i,y,k, Block.netherBrick.blockID);
-                		 world.setBlock(i+1,y,k, Block.netherBrick.blockID);
-                		 world.setBlock(i-2,y,k-1, Block.netherBrick.blockID);
-                		 world.setBlock(i-1,y,k-1, Block.netherBrick.blockID);
-                		 world.setBlock(i,y,k-1, Block.netherBrick.blockID);
-                		 world.setBlock(i+1,y,k-1, Block.netherBrick.blockID);
-                		 world.setBlock(i+2,y,k-1, Block.netherBrick.blockID);
-                		 world.setBlock(i-2,y,k+1, Block.netherBrick.blockID);
-                		 world.setBlock(i-1,y,k+1, Block.netherBrick.blockID);
-                		 world.setBlock(i,y,k+1, Block.netherBrick.blockID);
-                		 world.setBlock(i+1,y,k+1, Block.netherBrick.blockID);
-                		 world.setBlock(i+2,y,k+1, Block.netherBrick.blockID);
-                		 world.setBlock(i-1,y,k+2, Block.netherBrick.blockID);
-                		 world.setBlock(i,y,k+2, Block.netherBrick.blockID);
-                		 world.setBlock(i+1,y,k+2, Block.netherBrick.blockID);
-                		 world.setBlock(i-1,y,k-2, Block.netherBrick.blockID);
-                		 world.setBlock(i,y,k-2, Block.netherBrick.blockID);
-                		 world.setBlock(i+1,y,k-2, Block.netherBrick.blockID);
+                		 world.setBlock(i-2,y,k, MineTux.BlockBrickHigh.blockID);
+                		 world.setBlock(i-1,y,k, MineTux.BlockBrickHigh.blockID);
+                		 world.setBlock(i,y,k, MineTux.BlockBrickHigh.blockID);
+                		 world.setBlock(i+1,y,k, MineTux.BlockBrickHigh.blockID);
+                		 world.setBlock(i-2,y,k-1, MineTux.BlockBrickHigh.blockID);
+                		 world.setBlock(i-1,y,k-1, MineTux.BlockBrickHigh.blockID);
+                		 world.setBlock(i,y,k-1, MineTux.BlockBrickHigh.blockID);
+                		 world.setBlock(i+1,y,k-1, MineTux.BlockBrickHigh.blockID);
+                		 world.setBlock(i+2,y,k-1, MineTux.BlockBrickHigh.blockID);
+                		 world.setBlock(i-2,y,k+1, MineTux.BlockBrickHigh.blockID);
+                		 world.setBlock(i-1,y,k+1, MineTux.BlockBrickHigh.blockID);
+                		 world.setBlock(i,y,k+1, MineTux.BlockBrickHigh.blockID);
+                		 world.setBlock(i+1,y,k+1, MineTux.BlockBrickHigh.blockID);
+                		 world.setBlock(i+2,y,k+1, MineTux.BlockBrickHigh.blockID);
+                		 world.setBlock(i-1,y,k+2, MineTux.BlockBrickHigh.blockID);
+                		 world.setBlock(i,y,k+2, MineTux.BlockBrickHigh.blockID);
+                		 world.setBlock(i+1,y,k+2, MineTux.BlockBrickHigh.blockID);
+                		 world.setBlock(i-1,y,k-2, MineTux.BlockBrickHigh.blockID);
+                		 world.setBlock(i,y,k-2, MineTux.BlockBrickHigh.blockID);
+                		 world.setBlock(i+1,y,k-2, MineTux.BlockBrickHigh.blockID);
                 	 }
                 	 
                 	 
@@ -106,7 +105,7 @@ public class WorldGenTower extends WorldGenerator
                 
                 if(!world.isRemote){
                 	EntityZombieKing king = new EntityZombieKing(world);
-                	king.setLocationAndAngles(i,j+10,k,360.0F, 0.0F);
+                	king.setLocationAndAngles(i,j+11,k,360.0F, 0.0F);
         			world.spawnEntityInWorld(king);
         		}
                                 
