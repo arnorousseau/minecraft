@@ -207,14 +207,14 @@ public class WorldGenTower extends WorldGenerator
 	           		 world.setBlock(i+1,y,k-2, Block.cobblestone.blockID);
 	           		 
 	           		 
-	           		 WeightedRandomChestContent[] chestContents = new WeightedRandomChestContent[] {new WeightedRandomChestContent(Item.diamond.itemID, 0, 1, 3, 3), new WeightedRandomChestContent(Item.ingotIron.itemID, 0, 1, 5, 10), new WeightedRandomChestContent(Item.ingotGold.itemID, 0, 1, 3, 5), new WeightedRandomChestContent(Item.bread.itemID, 0, 1, 3, 15), new WeightedRandomChestContent(Item.appleRed.itemID, 0, 1, 3, 15), new WeightedRandomChestContent(Item.pickaxeIron.itemID, 0, 1, 1, 5), new WeightedRandomChestContent(Item.swordIron.itemID, 0, 1, 1, 5), new WeightedRandomChestContent(Item.plateIron.itemID, 0, 1, 1, 5), new WeightedRandomChestContent(Item.helmetIron.itemID, 0, 1, 1, 5), new WeightedRandomChestContent(Item.legsIron.itemID, 0, 1, 1, 5), new WeightedRandomChestContent(Item.bootsIron.itemID, 0, 1, 1, 5), new WeightedRandomChestContent(Block.obsidian.blockID, 0, 3, 7, 5), new WeightedRandomChestContent(Block.sapling.blockID, 0, 3, 7, 5), new WeightedRandomChestContent(Item.saddle.itemID, 0, 1, 1, 3), new WeightedRandomChestContent(Item.horseArmorIron.itemID, 0, 1, 1, 1), new WeightedRandomChestContent(Item.horseArmorGold.itemID, 0, 1, 1, 1), new WeightedRandomChestContent(Item.horseArmorDiamond.itemID, 0, 1, 1, 1)};
+	           		 WeightedRandomChestContent[] chestContents = new WeightedRandomChestContent[] {new WeightedRandomChestContent(MineTux.StormGem.itemID, 0, 1, 1, 100), new WeightedRandomChestContent(Item.horseArmorDiamond.itemID, 0, 1, 1, 1)};
 	           		 WorldGeneratorBonusChest chestBonus = new WorldGeneratorBonusChest(chestContents,2);
 	           		 chestBonus.generate(world, par2Random, i, y+1, k);
 	           		 
 	           		 if(!world.isRemote){
 	           			EntitySkeleton skeleton = new EntitySkeleton(world);
 	           			skeleton.setSkeletonType(1);
-	           			skeleton.setLocationAndAngles(i,y+1,k, 360.0F, 0.0F);
+	           			skeleton.setLocationAndAngles(i+1,y+1,k+1, 360.0F, 0.0F);
              			world.spawnEntityInWorld(skeleton);
 	           		 }
 	           	 }
