@@ -68,13 +68,13 @@ public class WorldGenTower extends WorldGenerator
 				 	 || !LocationIsValidSpawn(world, i, j, k-3) 
 				 	 || !LocationIsValidSpawn(world, i, j, k+3)
 				 	 
-				 /*	 || !LocationIsValidSpawn(world, i+36, j, k) 
+				 	 || !LocationIsValidSpawn(world, i+36, j, k) 
     				 || !LocationIsValidSpawn(world, i+33, j, k) 
     				 || !LocationIsValidSpawn(world, i+39, j, k)
 				 	 || !LocationIsValidSpawn(world, i+36, j, k-3) 
 				 	 || !LocationIsValidSpawn(world, i+36, j, k+3)
 				 	 
-				 	 ||	!LocationIsValidSpawn(world, i, j, k+36) 
+				 /*	 ||	!LocationIsValidSpawn(world, i, j, k+36) 
     				 || !LocationIsValidSpawn(world, i-3, j, k+36) 
     				 || !LocationIsValidSpawn(world, i + 3, j, k+36)
 				 	 || !LocationIsValidSpawn(world, i, j, k+33) 
