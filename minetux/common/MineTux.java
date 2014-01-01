@@ -54,7 +54,7 @@ public class MineTux {
 	static EnumArmorMaterial MithrilArmor = EnumHelper.addArmorMaterial("MithrilArmor", 20, new int[]{3, 8, 6, 3}, 15);
 	static EnumToolMaterial WarAxeMaterial = EnumHelper.addToolMaterial("WarAxe", 2, 250, 7F, 2, 5);
 	static EnumToolMaterial WarHammerMaterial = EnumHelper.addToolMaterial("Hamma", 3, 750, 1.0F, 14, 9);
-	
+	static EnumToolMaterial CephalosRazorMaterial = EnumHelper.addToolMaterial("CephalosRazor", 2, 250, 7F, 2, 5);
 	
 	//Blocks
 	public static Block BlockCopper = new BlockCopper(2600).setHardness(1.0F).setResistance(5.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("BlockCopper").setTextureName("minetux:BlockCopper");
@@ -84,6 +84,8 @@ public class MineTux {
 	public static Item WarAxe;
 	public static Item WarHammer = new ItemWarHammer(12023, WarHammerMaterial).setCreativeTab(CreativeTabs.tabCombat).setFull3D().setUnlocalizedName("WarHammer");
 	public static Item CephalosGriffe;
+	public static Item CephalosRazor;
+	public static Item StormGem;
 	
 	public static final BiomeGenBase BiomeEther = new BiomeGenEther(25);
 	public static final BiomeGenBase BiomeVolcano = new BiomeGenVolcano(26);
@@ -124,8 +126,12 @@ public class MineTux {
 		OstrichEgg = new ItemOstrichEgg(12021).setUnlocalizedName("OstrichEgg").setCreativeTab(CreativeTabs.tabMaterials).setTextureName("minetux:OstrichEgg");
 		WarAxe = new ItemSword(12022,WarAxeMaterial).setUnlocalizedName("WarAxe").setTextureName("minetux:WarAxe");
 		CephalosGriffe = new Item(12024).setUnlocalizedName("CephalosGriffe").setCreativeTab(CreativeTabs.tabMaterials).setTextureName("minetux:CephalosGriffe");
+		CephalosRazor = new ItemSword(12025,CephalosRazorMaterial).setUnlocalizedName("CephalosRazor").setTextureName("minetux:CephalosRazor");
+		StormGem = new Item(12026).setUnlocalizedName("StormGem").setCreativeTab(CreativeTabs.tabMaterials).setTextureName("minetux:StormGem");
+		
 		
 		MinecraftForge.setToolClass(WarAxe, "sword", 2);
+		MinecraftForge.setToolClass(CephalosRazor, "sword", 2);
 		
 		GameRegistry.registerItem(CopperHelmet, "CopperHelmet", "MineTux");
 		GameRegistry.registerItem(CopperChestPlate, "CopperChestPlate", "MineTux");
@@ -163,6 +169,7 @@ public class MineTux {
 		GameRegistry.registerBlock(BlockStoneHigh, "BlockStoneHigh");
 		GameRegistry.registerBlock(BlockBrickHigh, "BlockBrickHigh");
 		GameRegistry.registerItem(CephalosGriffe, "CephalosGriffe", "MineTux");
+		GameRegistry.registerItem(StormGem, "StormGem", "MineTux");
 		
 		
 		//Furnace Registry
@@ -279,6 +286,9 @@ public class MineTux {
 		GameRegistry.addRecipe(new ItemStack(WandEther,1), new Object[]{" R "," B "," R ",Character.valueOf('R'), GemRuby, Character.valueOf('B'), Item.blazeRod});
 		GameRegistry.addRecipe(new ItemStack(BeerItem,1), new Object[]{"OOO"," R ","   ",Character.valueOf('O'), MineTux.HopItem, Character.valueOf('R'), Item.glassBottle});
 		GameRegistry.addRecipe(new ItemStack(WarAxe,1), new Object[]{"III","ISI"," S ",Character.valueOf('I'), Item.ingotIron, Character.valueOf('S'), Item.stick});
+		GameRegistry.addRecipe(new ItemStack(CephalosRazor,1), new Object[]{" G "," I "," S ",Character.valueOf('G'), MineTux.CephalosGriffe, Character.valueOf('I'), Item.ingotIron, Character.valueOf('S'), Item.stick});
+		
+		GameRegistry.addRecipe(new ItemStack(WarHammer,1), new Object[]{"III","IGI"," S ",Character.valueOf('I'), Item.ingotIron, Character.valueOf('G'), MineTux.StormGem, Character.valueOf('S'), Item.stick});
 		
 		GameRegistry.addRecipe(new ItemStack(BlockBrickHigh,4), new Object[]{"   ","PP ","PP ",Character.valueOf('P'), MineTux.BlockStoneHigh});
 		
