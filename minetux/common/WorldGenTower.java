@@ -96,6 +96,7 @@ public class WorldGenTower extends WorldGenerator
         		
         		
 
+<<<<<<< HEAD
                 this.makeTower(world, i, j, k, rand);
                 this.makeTower(world, i+36, j, k, rand);
                 this.makeTower(world, i, j, k+36, rand);
@@ -141,18 +142,72 @@ public class WorldGenTower extends WorldGenerator
                 			world.setBlock(u,y,k, Block.fenceIron.blockID);
                 		}
                 	}
+=======
+                for(int y=j; y<(j+25); y++){
+           	 	 	 world.setBlock(i+1,y,k+3, MineTux.BlockBrickHigh.blockID);
+            	 	 world.setBlock(i,y,k+3, MineTux.BlockBrickHigh.blockID);
+             	 	 world.setBlock(i-1,y,k+3, MineTux.BlockBrickHigh.blockID);
+              	 	 world.setBlock(i-2,y,k+2, MineTux.BlockBrickHigh.blockID);
+               	 	 world.setBlock(i-3,y,k+1, MineTux.BlockBrickHigh.blockID);
+                	 world.setBlock(i-3,y,k, MineTux.BlockBrickHigh.blockID);
+                	 world.setBlock(i-3,y,k-1, MineTux.BlockBrickHigh.blockID);
+                	 world.setBlock(i-2,y,k-2, MineTux.BlockBrickHigh.blockID);
+                	 world.setBlock(i-1,y,k-3, MineTux.BlockBrickHigh.blockID);
+                	 
+                	 if(y>(j+2)){
+                		 world.setBlock(i,y,k-3, MineTux.BlockBrickHigh.blockID);
+                	 }
+                	                 	 
+                	 world.setBlock(i+1,y,k-3, MineTux.BlockBrickHigh.blockID);
+                	 world.setBlock(i+2,y,k-2, MineTux.BlockBrickHigh.blockID);
+                	 world.setBlock(i+3,y,k-1, MineTux.BlockBrickHigh.blockID);
+                	 world.setBlock(i+3,y,k, MineTux.BlockBrickHigh.blockID);
+                	 world.setBlock(i+3,y,k+1, MineTux.BlockBrickHigh.blockID);
+                	 world.setBlock(i+2,y,k+2, MineTux.BlockBrickHigh.blockID);
+                	 
+                	 if(y == (j+10) || y == (j+20)){
+                		 world.setBlock(i-2,y,k, MineTux.BlockBrickHigh.blockID);
+                		 world.setBlock(i-1,y,k, MineTux.BlockBrickHigh.blockID);
+                		 world.setBlock(i,y,k, MineTux.BlockBrickHigh.blockID);
+                		 world.setBlock(i+1,y,k, MineTux.BlockBrickHigh.blockID);
+                		 world.setBlock(i-2,y,k-1, MineTux.BlockBrickHigh.blockID);
+                		 world.setBlock(i-1,y,k-1, MineTux.BlockBrickHigh.blockID);
+                		 world.setBlock(i,y,k-1, MineTux.BlockBrickHigh.blockID);
+                		 world.setBlock(i+1,y,k-1, MineTux.BlockBrickHigh.blockID);
+                		 world.setBlock(i+2,y,k-1, MineTux.BlockBrickHigh.blockID);
+                		 world.setBlock(i-2,y,k+1, MineTux.BlockBrickHigh.blockID);
+                		 world.setBlock(i-1,y,k+1, MineTux.BlockBrickHigh.blockID);
+                		 world.setBlock(i,y,k+1, MineTux.BlockBrickHigh.blockID);
+                		 world.setBlock(i+1,y,k+1, MineTux.BlockBrickHigh.blockID);
+                		 world.setBlock(i+2,y,k+1, MineTux.BlockBrickHigh.blockID);
+                		 world.setBlock(i-1,y,k+2, MineTux.BlockBrickHigh.blockID);
+                		 world.setBlock(i,y,k+2, MineTux.BlockBrickHigh.blockID);
+                		 world.setBlock(i+1,y,k+2, MineTux.BlockBrickHigh.blockID);
+                		 world.setBlock(i-1,y,k-2, MineTux.BlockBrickHigh.blockID);
+                		 world.setBlock(i,y,k-2, MineTux.BlockBrickHigh.blockID);
+                		 world.setBlock(i+1,y,k-2, MineTux.BlockBrickHigh.blockID);
+                	 }
+                	 
+                	 
+>>>>>>> fb3c9497e0654a10f1116a53128fc68ccec7b445
                 }
                 
                 
                 this.makeHouse(world, i+25, j, k+25);
                 
                 if(!world.isRemote){
+<<<<<<< HEAD
                 	for(int n=0;n<=10;n++){
                 		EntityOgre orc = new EntityOgre(world);
                 		orc.setLocationAndAngles(i+10,j,k+10, 360.0F, 0.0F);
             			world.spawnEntityInWorld(orc);
                     }
                 	
+=======
+                	EntityZombieKing king = new EntityZombieKing(world);
+                	king.setLocationAndAngles(i,j+11,k,360.0F, 0.0F);
+        			world.spawnEntityInWorld(king);
+>>>>>>> fb3c9497e0654a10f1116a53128fc68ccec7b445
         		}
                 
                 return true;

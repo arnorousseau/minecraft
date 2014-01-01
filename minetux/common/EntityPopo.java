@@ -58,7 +58,8 @@ public class EntityPopo extends EntityAnimal
 
     public boolean getCanSpawnHere()
     {
-    	return super.getCanSpawnHere();
+    	int percentage = this.rand.nextInt(100);
+    	return super.getCanSpawnHere() && (percentage < 2);
     }
     
     
